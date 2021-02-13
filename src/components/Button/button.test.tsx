@@ -12,7 +12,6 @@ const testProps: ButtonProps = {
   className: 'klass'
 }
 
-
 const linkProps = {
   btnType:ButtonType.Link,
   href:"http://dummyurl"
@@ -22,7 +21,6 @@ const disabledProps: ButtonProps = {
   disabled: true,
   onClick: jest.fn(),
 }
-
 
 
 describe('test Button component',()=>{
