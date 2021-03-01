@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir":"dist", // 输出文件
+    "module":"esnext", //构建结果
+    "target":"es5", //构建版本
+    "declaration": true, // 生成声明文件
+    "jsx": "react",
+    "moduleResolution": "node", //采用node查询模块的方式，先查询node_moduless 
+    "allowSyntheticDefaultImports": true, // 允许 import React from 'react';这样的引入
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/**/App.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+  ]
+}
