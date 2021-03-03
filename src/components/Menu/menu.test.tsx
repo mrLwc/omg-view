@@ -40,18 +40,17 @@ describe('测试menu组件',()=>{
   it('测试默认渲染',()=>{
     expect(menuElement).toBeInTheDocument();
     expect(menuElement).toHaveClass('omg-menu test');
-    expect(activeElement).toHaveClass('omg-menu-item is-active')
-    expect(disabledElement).toHaveClass('omg-menu-item is-disabled')
+    expect(disabledElement).toHaveClass('omg-menu-item is-disabled');
   })
   it('测试其他属性',()=>{
     const thirdItem = wrapper.getByText('xyz')
     fireEvent.click(thirdItem)
     expect(thirdItem).toHaveClass('is-active')
     expect(activeElement).not.toHaveClass('is-active')
-    expect(testProps.onSelect).toHaveBeenCalledWith(2)
+    expect(testProps.onSelect).toHaveBeenCalledWith("2")
     fireEvent.click(disabledElement);
     expect(disabledElement).not.toHaveClass('is-active')
-    expect(testProps.onSelect).not.toHaveBeenCalledWith(1)
+    expect(testProps.onSelect).not.toHaveBeenCalledWith("1")
   })
   it('测试mode',()=>{
     cleanup()
