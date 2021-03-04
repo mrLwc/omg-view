@@ -39,22 +39,22 @@
     "clean": "rimraf ./dist",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook -s storybook-static",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-scss": "node-sass ./src/styles/index.scss ./dist/index.css",
     "build": "npm run clean && concurrently \"npm run build-ts\" \"npm run build-scss\"",
-    "prepublish": "npm run test:nowatch && npm run lint && npm run build "
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build "
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"npm run test:nowatch && npm run lint"
+    }
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
-  },
-  "husky":{
-    "hooks":{
-      "pre-commit":"npm run test:nowatch && npm run lint"
-    }
   },
   "browserslist": {
     "production": [
